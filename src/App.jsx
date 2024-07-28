@@ -1,23 +1,27 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import HomeCard from './components/HomeCard';
-import JobListings from './components/JobListings';
-import ViewAllJobs from './components/ViewAllJobs'
-function App() {
-   return (
-      <>
-         <Navbar />
-         {/* <!-- Hero --> */}
-         <Hero />
-         {/* <!-- Developers and Employers --> */}
-         <HomeCard />
-         {/*  <!-- Browse Jobs --> */}
-         <JobListings />
-         {/*  <!-- View all jobs --> */}
-         <ViewAllJobs />
-      </>
-   );
-}
+import React from 'react';
+import {
+   Route,
+   createBrowserRouter,
+   createRoutesFromElements,
+   RouterProvider,
+} from 'react-router-dom';
 
-export default App
+import MainLayout from './layouts/MainLayout';
+import HomePage from './pages/HomePage';
+import JobsPage from './pages/JobsPage';
+import Error404 from './components/404';
+//setting up react router for navigating through the pages
+const router = createBrowserRouter(
+   createRoutesFromElements(
+      <Route path="/" element={<MainLayout />}>
+         <Route index element={<HomePage />} />
+         <Route path="/jobs" element={<JobsPage />} />
+         <Route path="*" element={<Error404 />} />
+      </Route>
+   )
+);
+const App = () => {
+   return <RouterProvider router={router} />;
+};
+
+export default App;
