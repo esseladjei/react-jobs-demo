@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Developers from './components/HomeCard'
-import BrowserJobs from './components/BrowserJobs'
+import HomeCard from './components/HomeCard';
+import JobListings from './components/JobListings';
 import ViewAllJobs from './components/ViewAllJobs'
 function App() {
    return (
@@ -11,13 +11,13 @@ function App() {
          {/* <!-- Hero --> */}
          <Hero />
          {/* <!-- Developers and Employers --> */}
-         <Developers />
+         <HomeCard />
          {/*  <!-- Browse Jobs --> */}
-         <BrowserJobs />
+         <JobListings />
          {/*  <!-- View all jobs --> */}
          <ViewAllJobs />
       </>
-   )
+   );
 }
 
 export default App
