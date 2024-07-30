@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/react.svg';
-import clsx from 'clsx';
 const Navbar = ({}) => {
    const NavLinkClass = ({ isActive }) =>
       isActive
