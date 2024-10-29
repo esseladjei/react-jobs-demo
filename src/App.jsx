@@ -8,14 +8,15 @@ import {
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
-import JobPage, { jobLoader } from './pages/JobPage';
+import JobPage from './pages/JobPage';
+import jobLoader from './pages/JobLoader';
 import Error404 from './components/404';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
 const App = () => {
    //add new job
    const addJob = async (newJob) => {
-      const res = await fetch('/api/jobs', {
+     await fetch('/api/jobs', {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ const App = () => {
 
    //delete new job
    const deleteJob = async (id) => {
-      const res = await fetch(`/api/jobs/${id}`, {
+      await fetch(`/api/jobs/${id}`, {
          method: 'DELETE',
       });
       return;
@@ -35,7 +36,7 @@ const App = () => {
 
 
 const updateJob = async(job)=>{
-    const res = await fetch(`/api/jobs/${job.id}`, {
+  await fetch(`/api/jobs/${job.id}`, {
        method: 'PUT',
        headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import clsx from 'clsx';
 export const Card = ({ children, classes }) => {
    return (
@@ -7,3 +7,7 @@ export const Card = ({ children, classes }) => {
       </div>
    );
 };
+Card.propTypes = {
+  children: PropTypes.element,
+  classes: PropTypes.string
+}

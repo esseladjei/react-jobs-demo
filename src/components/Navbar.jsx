@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+
 import { NavLink } from 'react-router-dom';
 import Logo from '../assets/react.svg';
-const Navbar = ({}) => {
+const Navbar = () => {
    const NavLinkClass = ({ isActive }) =>
       isActive
          ? 'bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2'
