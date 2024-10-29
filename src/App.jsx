@@ -8,7 +8,8 @@ import {
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
-import JobPage, { jobLoader } from './pages/JobPage';
+import JobPage from './pages/JobPage';
+import jobLoader from './pages/JobLoader';
 import Error404 from './components/404';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';

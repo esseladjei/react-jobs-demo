@@ -129,14 +129,8 @@ const JobPage = ({ deleteJob }) => {
    );
 };
 
-//option 2 : using data loaded
-const jobLoader = async ({ params }) => {
-   const res = await fetch(`/api/jobs/${params.id}`);
-   const data = await res.json();
-   return data;
-};
 
 JobPage.propTypes = {
    deleteJob: PropTypes.any,
 };
-export { JobPage as default, jobLoader };
+export default JobPage
