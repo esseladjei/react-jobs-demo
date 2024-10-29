@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: CI/CD Pipeline
 
 on:
   push:
@@ -15,4 +15,18 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --tag react-vite-app:$(date +%s)
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Lint
+      run: npm run lint
+        
+
+
