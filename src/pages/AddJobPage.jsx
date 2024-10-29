@@ -242,7 +242,7 @@ const AddJobPage = ({ addJobSubmit }) => {
       </>
    );
 };
-/* AddJobPage.propTypes = {
+AddJobPage.propTypes = {
    addJobSubmit: PropTypes.func,
-}; */
+};
 export default AddJobPage;
