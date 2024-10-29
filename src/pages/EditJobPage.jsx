@@ -2,6 +2,7 @@ import {useLoaderData } from 'react-router-dom';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 const EditJobPage = ({ updateJobSubmit }) => {
    const job = useLoaderData();
    const [title, setTitle] = useState(job.title);
@@ -245,5 +246,7 @@ const EditJobPage = ({ updateJobSubmit }) => {
       </>
    );
 };
-
+EditJobPage.propTypes = {
+   updateJobSubmit: PropTypes.func
+};
 export default EditJobPage;

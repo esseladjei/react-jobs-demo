@@ -1,10 +1,11 @@
 /*import { useState, useEffect } from 'react';i
 import Spinner from '../components/Spinner';*/
-import { useParams, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 /* using useEffect hook or also using a data loader to fetch a job, two examples */
 const JobPage = ({ deleteJob }) => {
    //delete Job
@@ -135,4 +136,7 @@ const jobLoader = async ({ params }) => {
    return data;
 };
 
+JobPage.propTypes = {
+   deleteJob: PropTypes.any,
+};
 export { JobPage as default, jobLoader };
