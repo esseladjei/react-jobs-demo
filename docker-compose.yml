@@ -1,0 +1,22 @@
+services:
+  react-app:
+    container_name: ReactViteApp
+    build:
+      context: .
+      dockerfile: Dockerfile  # Dockerfile for Vite React app
+      target: frontend
+    ports:
+      - "3000:3000"           # Maps host port 3000 to container port 3000
+    depends_on:
+      - json-server            # Wait for json-server to be ready
+
+  json-server:
+    container_name: json_server_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    ports:
+      - "4000:4000"           # Maps host port 4000 to container port 4000
+    volumes:
+     - ./jobs.json:/app/jobs.json:ro

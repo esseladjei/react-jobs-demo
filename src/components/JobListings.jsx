@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import JobList from './joblist';
 import Spinner from './Spinner';
+import PropTypes from 'prop-types';
 const JobListings = ({ isHome = false }) => {
    const [jobs, setJobs] = useState([]);
    const [loading, setLoading] = useState(true);
@@ -41,5 +42,7 @@ const JobListings = ({ isHome = false }) => {
       </section>
    );
 };
-
+JobListings.propTypes = {
+   isHome: PropTypes.bool,
+};
 export default JobListings;
