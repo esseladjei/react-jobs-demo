@@ -10,7 +10,7 @@ import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
 import JobPage from './pages/JobPage';
 import jobLoader from './pages/JobLoader';
-import Error404 from './components/404';
+import NotFound from './components/NotFound';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
 const App = () => {
@@ -67,7 +67,7 @@ const updateJob = async(job)=>{
                loader={jobLoader}
             />
 
-            <Route path="*" element={<Error404 />} />
+            <Route path="*" element={<NotFound />} />
          </Route>
       )
    );
