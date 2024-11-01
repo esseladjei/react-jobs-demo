@@ -8,6 +8,9 @@ export const Card = ({ children, classes='' }) => {
    );
 };
 Card.propTypes = {
-  children: PropTypes.element,
-  classes: PropTypes.string
-}
+   children: PropTypes.oneOfType([
+      PropTypes.element, // Single React element
+      PropTypes.node, // Any renderable content including strings, numbers, etc.
+   ]),
+   classes: PropTypes.string,
+};
