@@ -1,6 +1,6 @@
 # Use an official Node.js image as the base image
 # Base stage
-FROM node:18 AS base
+FROM node:21.1.0-alpine3.18 AS base
 
 # set the working directory inside the container
 
@@ -27,7 +27,7 @@ EXPOSE 3000
 # Start the app with serve
 CMD ["serve", "-s", "dist", "-l", "3000"]
 
-FROM base AS server
+FROM base as server
 # Install a lightweight json-server
 RUN npm install -g json-server
 
