@@ -11,7 +11,12 @@ describe('NotFound 404 page', () => {
             <NotFound />
          </MemoryRouter>
       );
-      const h1 = screen.getByTestId('heading');
-      expect(h1).toBeInTheDocument();
+     const h1 = screen.getByTestId('heading');
+     const msg = screen.getByTestId('msg');
+     expect(h1).toBeInTheDocument();
+     expect(msg).toBeInTheDocument()
+     expect(msg.textContent).toBe('This page does not exist');
+     expect(h1.textContent).toBe('404 Not Found');
+     screen.debug();
    });
 });
