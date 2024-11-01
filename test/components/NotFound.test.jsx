@@ -17,6 +17,5 @@ describe('NotFound 404 page', () => {
      expect(msg).toBeInTheDocument()
      expect(msg.textContent).toBe('This page does not exist');
      expect(h1.textContent).toBe('404 Not Found');
-     screen.debug();
    });
 });
