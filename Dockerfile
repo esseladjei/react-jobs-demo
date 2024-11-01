@@ -25,7 +25,8 @@ RUN npm run build
 EXPOSE 3000
 
 # Start the app with serve
-CMD ["serve", "-s", "dist", "-l", "3000"]
+#CMD ["serve", "-s", "dist", "-l", "3000"]
+CMD ["npm", "run", "dev"]
 
 FROM base AS server
 # Install a lightweight json-server
@@ -38,4 +39,4 @@ COPY jobs.json .
 EXPOSE 4000
 
 # Run json-server with the specified JSON file and port
-CMD ["json-server", "--watch", "jobs.json", "--port", "4000"]
+CMD ["npm", "run", "server"]
