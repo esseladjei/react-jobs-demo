@@ -1,6 +1,6 @@
 # Use an official Node.js image as the base image
 # Base stage
-FROM node:18 AS base
+FROM node:21.1.0-alpine3.18 AS base
 
 # set the working directory inside the container
 
@@ -25,10 +25,9 @@ RUN npm run build
 EXPOSE 3000
 
 # Start the app with serve
-#CMD ["serve", "-s", "dist", "-l", "3000"]
-CMD ["npm", "run", "dev"]
+CMD ["serve", "-s", "dist", "-l", "3000"]
 
-FROM base AS server
+FROM base as server
 # Install a lightweight json-server
 RUN npm install -g json-server
 
@@ -39,4 +38,4 @@ COPY jobs.json .
 EXPOSE 4000
 
 # Run json-server with the specified JSON file and port
-CMD ["npm", "run", "server"]
+CMD ["json-server", "--watch", "jobs.json", "--port", "4000"]
