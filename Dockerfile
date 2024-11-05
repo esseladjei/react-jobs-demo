@@ -27,7 +27,7 @@ EXPOSE 3000
 # Start the app with serve
 CMD ["serve", "-s", "dist", "-l", "3000"]
 
-FROM base as server
+FROM base AS server
 # Install a lightweight json-server
 RUN npm install -g json-server
 
