@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import JobList from './joblist';
 import Spinner from './Spinner';
 import PropTypes from 'prop-types';
+import getApiUrl from '../../getApiUrl';
 const JobListings = ({ isHome = false }) => {
    const [jobs, setJobs] = useState([]);
    const [loading, setLoading] = useState(true);
@@ -11,7 +12,7 @@ const JobListings = ({ isHome = false }) => {
       const fetchJobs = async () => {
          const limit = isHome ? 3 : null;
          try {
-            const res = await fetch(`/api/jobs?_limit=${limit}`);
+            const res = await fetch(`${getApiUrl()}/jobs?_limit=${limit}`);
             const data = await res.json();
             setJobs(data);
          } catch (error) {

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import PropTypes from 'prop-types';
+//import getApiUrl from '../getApiUrl';
 /* using useEffect hook or also using a data loader to fetch a job, two examples */
 const JobPage = ({ deleteJob }) => {
    //delete Job
@@ -30,7 +31,7 @@ const JobPage = ({ deleteJob }) => {
    useEffect(() => {
       const fetchJob = async () => {
          try {
-            const res = await fetch(`/api/jobs/${id}`);
+            const res = await fetch(`${getApiUrl()}/jobs/${id}`);
             const data = await res.json();
             setJob(data);
          } catch (error) {
@@ -129,8 +130,7 @@ const JobPage = ({ deleteJob }) => {
    );
 };
 
-
 JobPage.propTypes = {
    deleteJob: PropTypes.any,
 };
-export default JobPage
+export default JobPage;
