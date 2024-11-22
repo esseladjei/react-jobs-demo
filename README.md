@@ -23,6 +23,18 @@ This project is a single-page application built with **React**, **Vite**, and **
 ### For Local Setup
 - **Node.js** (v18 or later) and npm installed.
 - Optionally, install **JSON Server** globally for the backend:
+
+- run local dev database server
+```bash
+npm run server 
+```
+- run application
+
+```bash
+npm run dev 
+```
+- optional: To install json-server
+
   ```bash
   npm install -g json-server
 
@@ -32,6 +44,17 @@ _Builds or rebuilds the images for all services defined in the docker-compose.ym
 
 3. Access the application  
    _You should be able to navigate to http://localhost:3000/ to access the application
+   Mock database: http://localhost:4000/jobs
+
 ```bash
  docker-compose up -d --build
+```
+
+## Unit test
+```bash
+ npm run test 
+```
+or 
+```bash
+  npm run test:ui
 ```
