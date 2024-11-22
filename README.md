@@ -20,7 +20,7 @@ This project is a single-page application built with **React**, **Vite**, and **
 
 ## Prerequisites
 
-### For Local Setup
+### 1. For Local Setup
 
 - **Node.js** (v18 or later) and npm installed.
 - Optionally, install **JSON Server** globally for the backend:
@@ -42,7 +42,7 @@ npm run dev
   ```bash
   npm install -g json-server
 
-## For runing in DOCKER
+### 3. For runing in DOCKER
 
 2. Docker info  
   
@@ -51,7 +51,7 @@ npm run dev
 
 3.
 
-#### Access the application  
+### 4. Access the application  
 
    You should be able to navigate to <http://localhost:3000/> to access the application
 
@@ -63,7 +63,7 @@ npm run dev
  docker-compose up -d --build
 ```
 
-## Unit test
+### 5. Unit test
 
 ```bash
  npm run test 
