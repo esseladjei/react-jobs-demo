@@ -10,13 +10,21 @@ import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
 import JobPage from './pages/JobPage';
 import jobLoader from './pages/JobLoader';
-import Error404 from './components/404';
+import NotFound from './components/NotFound';
 import AddJobPage from './pages/AddJobPage';
 import EditJobPage from './pages/EditJobPage';
+import getApiUrl from '../getApiUrl';
+
 const App = () => {
-   //add new job
+  //add new job
+  function run() {
+    fetch(`${getApiUrl()}/jobs`, (data) => {
+      console.log('this data', data)
+    })
+  }
+  run()
    const addJob = async (newJob) => {
-     await fetch('/api/jobs', {
+      await fetch(`${getApiUrl()}/jobs`, {
          method: 'POST',
          headers: {
             'Content-Type': 'application/json',
@@ -28,23 +36,22 @@ const App = () => {
 
    //delete new job
    const deleteJob = async (id) => {
-      await fetch(`/api/jobs/${id}`, {
+      await fetch(`${getApiUrl()}/jobs/${id}`, {
          method: 'DELETE',
       });
       return;
    };
 
-
-const updateJob = async(job)=>{
-  await fetch(`/api/jobs/${job.id}`, {
-       method: 'PUT',
-       headers: {
-          'Content-Type': 'application/json',
-       },
-       body: JSON.stringify(job),
-    });
-    return;
-}
+   const updateJob = async (job) => {
+      await fetch(`${getApiUrl()}/jobs/${job.id}`, {
+         method: 'PUT',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify(job),
+      });
+      return;
+   };
 
    //setting up react router for navigating through the pages
    const router = createBrowserRouter(
@@ -67,7 +74,7 @@ const updateJob = async(job)=>{
                loader={jobLoader}
             />
 
-            <Route path="*" element={<Error404 />} />
+            <Route path="*" element={<NotFound />} />
          </Route>
       )
    );

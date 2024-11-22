@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-export const Card = ({ children, classes }) => {
+export const Card = ({ children, classes='' }) => {
    return (
       <div className={clsx(`${classes} p-6 rounded-lg shadow-md`)}>
          {children}
@@ -8,6 +8,9 @@ export const Card = ({ children, classes }) => {
    );
 };
 Card.propTypes = {
-  children: PropTypes.element,
-  classes: PropTypes.string
-}
+   children: PropTypes.oneOfType([
+      PropTypes.element, // Single React element
+      PropTypes.node, // Any renderable content including strings, numbers, etc.
+   ]),
+   classes: PropTypes.string,
+};
