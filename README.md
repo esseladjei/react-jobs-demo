@@ -21,40 +21,56 @@ This project is a single-page application built with **React**, **Vite**, and **
 ## Prerequisites
 
 ### For Local Setup
+
 - **Node.js** (v18 or later) and npm installed.
 - Optionally, install **JSON Server** globally for the backend:
 
 - run local dev database server
+
 ```bash
 npm run server 
 ```
+
 - run application
 
 ```bash
 npm run dev 
 ```
+
 - optional: To install json-server
 
   ```bash
   npm install -g json-server
 
 ## For runing in DOCKER
-2. _Project runs in a docker container, ensure you have Docker installed and run
-_Builds or rebuilds the images for all services defined in the docker-compose.yml file and then starts the containers in detached mode.
 
-3. Access the application  
-   _You should be able to navigate to http://localhost:3000/ to access the application
-   Mock database: http://localhost:4000/jobs
+2. Docker info  
+  
+  *Project runs in a docker container, ensure you have Docker installed and run
+  Builds or rebuilds the images for all services defined in the docker-compose.yml file and then starts the containers in detached mode*.
+
+3.
+
+#### Access the application  
+
+   You should be able to navigate to <http://localhost:3000/> to access the application
+
+#### Mock database
+
+       http://localhost:4000/jobs
 
 ```bash
  docker-compose up -d --build
 ```
 
 ## Unit test
+
 ```bash
  npm run test 
 ```
-or 
+
+or
+
 ```bash
   npm run test:ui
 ```
