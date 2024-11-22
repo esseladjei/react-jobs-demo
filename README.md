@@ -49,15 +49,10 @@ npm run dev
   *Project runs in a docker container, ensure you have Docker installed and run
   Builds or rebuilds the images for all services defined in the docker-compose.yml file and then starts the containers in detached mode*.
 
-3.
-
 ### 4. Access the application  
 
-   You should be able to navigate to <http://localhost:3000/> to access the application
-
-#### Mock database
-
-       http://localhost:4000/jobs
+   You should be able to navigate to <http://localhost:3000/> to access the application  
+   Mock database: http://localhost:4000/jobs
 
 ```bash
  docker-compose up -d --build
